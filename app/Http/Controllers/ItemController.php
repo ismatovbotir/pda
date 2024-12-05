@@ -42,6 +42,7 @@ class ItemController extends Controller
 
     {
         //dd($id);
+        
         $item=Item::where('id',$id)->with('barcodes')->with('stocks')->first();
         return view('item',['item'=>$item]);
     }
@@ -71,13 +72,19 @@ class ItemController extends Controller
     }
     public function search(Request $request,){
         $barcode=$request->input('barcode');
-        $barcode=Barcode::where('barcode',$barcode)->first();
-        if($barcode==null){
-            return redirect()->route('main.index');
-        }else{
+        if(strlen($barcode)>6){
+            $barcode=Barcode::where('barcode',$barcode)->first();
+            if($barcode==null){
+                return redirect()->route('main.index');
+            }else{
                 //dd($barcode->item);
-        return redirect()->route('item.show',['item'=>$barcode->item_id]);
+                return redirect()->route('item.show',['item'=>$barcode->item_id]);
+            }
+
+        }else{
+            return redirect()->route('item.show',['item'=>$barcode]);
         }
+        
         
 
     }
