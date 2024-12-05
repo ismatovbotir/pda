@@ -18,5 +18,32 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        \App\Models\Company::create([
+            
+            'token'=>"WEQWEQWEQWE",
+            'vat'=>"123456789",
+            'name'=>"mEGA bUHORO",
+            'adress'=>"Buhoro shaxri",
+            'brand'=>"Mega Buhoro"
+
+        ]);
+        \App\Models\Role::create(
+            [
+                'name'=>'Admin'            ]
+        );
+        
+        \App\Models\User::create(
+            [
+                'name'=>'Admin',
+                'surename'=>'Feruz',
+                'mobile'=>'+998914487747',
+                'email'=>'megabuxara@gmail.com',
+                'password'=>Hash::make('123456789'),
+                'role_id'=>1,
+                'company_id'=>1
+            ]
+
+        );
     }
 }
