@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\Company::create([
             
-            'token'=>"WEQWEQWEQWE",
+            'token'=>"bgC0IO25RkleYXWeJKZ8",
             'vat'=>"123456789",
             'name'=>"mEGA bUHORO",
             'adress'=>"Buhoro shaxri",
