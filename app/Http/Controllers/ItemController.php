@@ -45,7 +45,7 @@ class ItemController extends Controller
         
         $item=Item::where('id',$id)->with('barcodes')->with('stocks')->first();
         if($item){
-
+            dd($item);    
             return view('item',['item'=>$item]);
         }else{
             return back();
