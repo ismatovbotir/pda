@@ -22,7 +22,10 @@ class ItemController extends Controller
             "message"=>"problem"
         );
         $item=Item::query()->orderByDesc('id')->first();
-        dd($item);
+        if($item){
+            $res["status"]="ok";
+            $res["message"]=$item->id;
+        };
 
         return  $res;
     }
