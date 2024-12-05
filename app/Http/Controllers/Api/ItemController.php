@@ -17,8 +17,14 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $item=Item::where('id',23)->get();
-        return $item->barcodes->barcode;
+        $res=array(
+            "status"=>"error",
+            "message"=>"problem"
+        );
+        $item=Item::query()->orderByDesc('id')->first();
+        dd($item);
+
+        return  $res;
     }
 
     /**
