@@ -2,9 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\api\StockController;
-use App\Http\Controllers\api\BarcodeController;
-use App\Http\Controllers\api\ItemController;
+use App\Http\Controllers\Api\StockController;
+use App\Http\Controllers\Api\BarcodeController;
+use App\Http\Controllers\Api\ItemController;
 
 /*
 |--------------------------------------------------------------------------
