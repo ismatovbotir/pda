@@ -16,7 +16,7 @@
     @foreach($item->barcodes as $barcode) 
      {{$barcode->barcode}},
     @endforeach
-    <p>Stock:<span>{{$totalStock}}</span></p>
+    <p>Stock: <span class="danger">{{$totalStock}}</span></p>
   </div>
   <ul class="list-group list-group-flush">
   @foreach($item->stocks as $stock) 
