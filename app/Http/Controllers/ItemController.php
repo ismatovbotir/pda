@@ -46,7 +46,7 @@ class ItemController extends Controller
         $item=Item::where('id',$id)->with('barcodes')->with('stocks')->first();
 
         if($item){
-        $totalStock='';
+        $totalStock=0;
            $stocks=$item->stocks;
            foreach($stocks as $stock){
 
