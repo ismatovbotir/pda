@@ -16,13 +16,13 @@
     @foreach($item->barcodes as $barcode) 
      {{$barcode->barcode}},
     @endforeach
-    <p>Stock:</p>
+    <p>Stock:<span>{{$totalStock}}</span></p>
   </div>
   <ul class="list-group list-group-flush">
   @foreach($item->stocks as $stock) 
   <li class="list-group-item"> {{$stock->warehouse}} - {{$stock->qty}}</li>
-    @endforeach
- 
+  @endforeach
+  
     
   </ul>
   
